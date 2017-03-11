@@ -1,0 +1,6 @@
+# Test dependencies
+
+-r base.txt
+
+flake8==3.2.1
+pep257==0.7.0
