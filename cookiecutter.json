@@ -8,5 +8,5 @@
   "author_email": "p@ihk.io",
   "time_zone": "America/Mexico_City",
   "language_code": "es-MX",
-  "use_whitenoise": "y"
+  "use_whitenoise": "y",
 }
