@@ -12,7 +12,7 @@
   "_copy_without_render": [
     "ansible/bash/tasks/*.yml",
     "ansible/django/tasks/*.yml",
-    "ansible/nginx/tasks/*.yml",
+    "ansible/nginx/tasks/ssl.yml",
     "ansible/nginx/templates/*.j2",
     "ansible/postgres/tasks/*.yml"
   ]

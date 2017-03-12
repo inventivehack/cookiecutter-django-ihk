@@ -1,5 +1,5 @@
 - name: Restart app
   become: yes
   service:
-    name: app
+    name: {{ cookiecutter.project_slug }}
     state: restarted
