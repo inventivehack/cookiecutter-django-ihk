@@ -9,6 +9,7 @@
   "time_zone": "America/Mexico_City",
   "language_code": "es-MX",
   "use_whitenoise": "y",
+  "use_travis": "y",
   "_copy_without_render": [
     "ansible/bash/tasks/*.yml",
     "ansible/django/tasks/*.yml",
