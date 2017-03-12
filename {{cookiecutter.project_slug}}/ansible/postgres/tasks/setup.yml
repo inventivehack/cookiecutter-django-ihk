@@ -1,0 +1,29 @@
+- name: Allow password authentication for local socker users
+  copy:
+    src: "pg_hba.conf"
+    dest: "/etc/postgresql/9.5/main/pg_hba.conf"
+    force: yes
+  notify: Restart PostgreSQL
+
+- name: Create database
+  become: yes
+  become_user: postgres
+  postgresql_db:
+    name: "{{ DATABASE_NAME }}"
+
+- name: Create user
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    name: "{{ DATABASE_USER }}"
+    password: "{{ DATABASE_PASSWORD }}"
+    state: present
+    role_attr_flags: "SUPERUSER,CREATEDB"
+
+- name: Provide user with DB permissions
+  become: yes
+  become_user: postgres
+  postgresql_user:
+    user: "{{ DATABASE_USER }}"
+    db: "{{ DATABASE_NAME }}"
+    priv: "ALL"

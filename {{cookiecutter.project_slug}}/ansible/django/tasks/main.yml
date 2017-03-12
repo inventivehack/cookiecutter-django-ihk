@@ -1,0 +1,17 @@
+- name: Install python and OS requiered dependencies
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    # OS Requiered
+    - libpq-dev
+    - build-essential
+
+    #Python
+    - python3-dev
+    - python3-pip
+
+- include: setup.yml
+
+- include: production.yml
+  when: ENV == "prod"

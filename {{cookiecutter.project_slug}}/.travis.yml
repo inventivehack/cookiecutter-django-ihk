@@ -1,0 +1,14 @@
+language: python
+
+python:
+  - '3.5'
+services:
+  - postgresql
+
+install: pip3 install -r requirements/prod.txt && pip3 install -r requirements/test.txt
+
+script:
+  - python3 manage.py collectstatic --no-input
+  - python3 manage.py test --no-input
+  - flake8
+  - pep257

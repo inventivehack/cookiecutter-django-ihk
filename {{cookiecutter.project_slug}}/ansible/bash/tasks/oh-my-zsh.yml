@@ -1,0 +1,30 @@
+- name: Download Oh My ZSH installer
+  get_url:
+    url: "https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh"
+    dest: "/tmp/install-oh-my-zsh.sh"
+    mode: 0755
+
+- name: Execute Oh My ZSH installer
+  become: yes
+  become_user: "{{ item }}"
+  ignore_errors: yes
+  script: "/tmp/install-oh-my-zsh.sh"
+  with_items:
+    - ubuntu
+    - root
+
+- name: Install .profile
+  copy:
+    src: ".profile"
+    dest: "{{ item }}"
+  with_items:
+    - "/home/ubuntu/.profile"
+    - "/root/.profile"
+
+- name: Install .zshrc
+  copy:
+    src: ".zshrc"
+    dest: "{{ item }}"
+  with_items:
+    - "/home/ubuntu/.zshrc"
+    - "/root/.zshrc"

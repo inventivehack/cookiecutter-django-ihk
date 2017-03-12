@@ -1,0 +1,6 @@
+[Unit]
+Description=Job that runs the application daemon
+
+[Service]
+Type=simple
+ExecStart=/srv/gunicorn.sh

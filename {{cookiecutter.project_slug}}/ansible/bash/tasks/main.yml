@@ -1,0 +1,11 @@
+- name: Install bash dependencies
+  when: ENV == "dev"
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    - zsh
+    - git
+
+- include: oh-my-zsh.yml
+  when: ENV == "dev"

@@ -1,0 +1,12 @@
+- name: Install python packages
+  become: yes
+  pip:
+    executable: "/usr/bin/pip3"
+    requirements: "/app/requirements/{{ ENV }}.txt"
+
+- name: Install python linters and testing dependencies
+  become: yes
+  pip:
+    executable: "/usr/bin/pip3"
+    requirements: "/app/requirements/test.txt"
+  when: ENV == "dev"

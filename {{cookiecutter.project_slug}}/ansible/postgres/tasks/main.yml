@@ -1,0 +1,12 @@
+- name: Install PostgreSQL
+  apt:
+    name: "{{ item }}"
+    update_cache: yes
+  with_items:
+    - postgresql-9.5
+    - postgresql-contrib
+    - libpq-dev
+    - python-psycopg2
+
+- include: setup.yml
+  when: ENV == "dev"

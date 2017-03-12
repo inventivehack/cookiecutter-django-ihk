@@ -1,0 +1,9 @@
+# Production dependencies go here
+
+-r base.txt
+
+gunicorn==19.6.0
+
+{% if cookiecutter.use_whitenoise == 'y' -%}
+whitenoise==3.3.0
+{%- endif %}

@@ -1,0 +1,12 @@
+version: 0.0
+os: linux
+files:
+   - source: /
+     destination: /app
+hooks:
+   BeforeInstall:
+    - location: provision/install.sh
+      runas: root
+   AfterInstall:
+    - location: provision/setup.sh
+      runas: root

@@ -90,4 +90,22 @@ ENV/
 
 *.retry
 
-ubuntu-xenial-16.04-cloudimg-console.log
+# OSX
+.DS_Store
+
+# Django media files
+media/
+
+.vagrant
+
+ubuntu-*
+
+staticfiles/
+
+ansible/nginx/files/ssl/*.crt
+ansible/nginx/files/ssl/*.key
+
+key
+
+node_modules/
+bower_components/

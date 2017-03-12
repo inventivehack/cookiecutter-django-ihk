@@ -1,0 +1,5 @@
+- name: Install gunicorn script
+  copy:
+    src: gunicorn.sh
+    dest: /srv/gunicorn.sh
+    mode: 0755

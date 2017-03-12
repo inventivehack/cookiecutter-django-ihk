@@ -1,0 +1,14 @@
+- name: Install NGINX
+  when: ENV == 'prod'
+  apt:
+    name: nginx
+    update_cache: yes
+
+- include: conf.yml
+  when: ENV == 'prod'
+
+- include: ssl.yml
+  when: ENV == 'prod'
+
+- include: sites.yml
+  when: ENV == 'prod'

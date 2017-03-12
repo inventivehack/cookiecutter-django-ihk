@@ -1,0 +1,21 @@
+{
+  "project_name": "Project Name",
+  "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_') }}",
+  "vagrant_port": "8888",
+  "vagrant_user": "{{ cookiecutter.project_slug }}",
+  "vagrant_group": "{{ cookiecutter.vagrant_user }}",
+  "author_name": "Pablo Trinidad",
+  "author_email": "p@ihk.io",
+  "time_zone": "America/Mexico_City",
+  "language_code": "es-MX",
+  "use_whitenoise": "y",
+  "use_travis": "y",
+  "use_aws_codedeploy": "y",
+  "_copy_without_render": [
+    "ansible/bash/tasks/*.yml",
+    "ansible/django/tasks/*.yml",
+    "ansible/nginx/tasks/ssl.yml",
+    "ansible/nginx/templates/*.j2",
+    "ansible/postgres/tasks/*.yml"
+  ]
+}

@@ -1,0 +1,5 @@
+# Development dependencies
+
+-r base.txt
+
+django-extensions==1.7.5

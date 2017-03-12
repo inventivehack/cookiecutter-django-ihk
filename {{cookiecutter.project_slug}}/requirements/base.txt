@@ -1,0 +1,15 @@
+# Base dependencies
+
+wheel==0.29.0
+
+# Django
+django==1.10.6
+
+# Configuration
+django-environ==0.4.1
+
+# Images
+Pillow==3.4.2
+
+# Python PostgreSQL Database Adapter
+psycopg2==2.7
