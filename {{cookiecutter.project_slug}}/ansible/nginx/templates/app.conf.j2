@@ -1,4 +1,4 @@
-upstream {{ cookiecutter.project_slug }} {
+upstream app {
     server 127.0.0.1:5000;
     keepalive 64;
 }
@@ -43,7 +43,7 @@ server {
         proxy_set_header Host $http_host;
         proxy_redirect off;
 
-        proxy_pass   http://{{ cookiecutter.project_slug }};
+        proxy_pass   http://app;
     }
 
 }
