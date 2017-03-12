@@ -12,5 +12,5 @@ echo "Running ansible playbook"
 ansible-playbook app.yml --extra-vars "$(cat ../.env)"
 
 echo "Handling services"
-test "$(hostname)" != '{{ cookiecutter.project_slug }}-dev' && (service tws restart)
+test "$(hostname)" != '{{ cookiecutter.project_slug }}-dev' && (service {{ cookiecutter.project_slug }} restart)
 test "$(hostname)" != '{{ cookiecutter.project_slug }}-dev' && (service nginx restart)

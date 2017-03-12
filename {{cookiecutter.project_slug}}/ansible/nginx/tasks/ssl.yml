@@ -1,0 +1,27 @@
+- name: Check if SSL folder exists
+  stat:
+    path: "/etc/nginx/ssl"
+  register: ssl_certificates_path_exists
+
+- name: Create SSL folder
+  file:
+    dest: "/etc/nginx/ssl"
+    mode: 0400
+    state: directory
+  when: not ssl_certificates_path_exists.stat.exists
+
+- name: Check if there are SSL certificates installed
+  find:
+    paths: "/etc/nginx/ssl/"
+    file_type: directory
+    patterns: "*"
+  register: ssl_certificates_exists
+
+- name: Transfer own SSL files
+  copy:
+    src: ssl/{{ DOMAIN_NAME }}.{{ item }}
+    dest: "/etc/nginx/ssl/{{ DOMAIN_NAME }}.{{ item }}"
+    mode: 0400
+  with_items:
+    - crt
+    - key

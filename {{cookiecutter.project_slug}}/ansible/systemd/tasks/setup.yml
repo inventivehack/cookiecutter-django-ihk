@@ -2,6 +2,6 @@
   become: yes
   copy:
     src: app.service
-    dest: /lib/systemd/system/tws.service
+    dest: /lib/systemd/system/{{ cookiecutter.project_slug }}.service
     mode: 0644
   notify: Restart app

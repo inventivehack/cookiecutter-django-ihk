@@ -1,0 +1,18 @@
+- name: Add NGINX main configuration file
+  copy:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+    mode: 644
+  notify: Restart NGINX
+
+- name: Disable default NGINX site
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  notify: Restart NGINX
+
+- name: Remove default NGINX site
+  file:
+    path: /etc/nginx/sites-available/default
+    state: absent
+  notify: Restart NGINX
