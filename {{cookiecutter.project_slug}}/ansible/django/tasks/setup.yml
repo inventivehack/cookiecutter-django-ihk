@@ -9,4 +9,4 @@
   pip:
     executable: "/usr/bin/pip3"
     requirements: "/app/requirements/test.txt"
-  when: ENV == "dev
+  when: ENV == "dev"
