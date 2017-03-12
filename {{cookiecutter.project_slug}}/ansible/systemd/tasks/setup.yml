@@ -1,0 +1,7 @@
+- name: Install application service
+  become: yes
+  copy:
+    src: app.service
+    dest: /lib/systemd/system/tws.service
+    mode: 0644
+  notify: Restart app
