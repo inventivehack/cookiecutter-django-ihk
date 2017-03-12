@@ -27,9 +27,9 @@ ALLOWED_HOSTS = []
 DATABASES['default'] = env.db('DATABASE_URL')
 
 ADMIN_URL = r'^{url}/'.format(url=env('DJANGO_ADMIN_URL'))
-{% if cookiecutter.use_whitenoise == 'y' %}
+{% if cookiecutter.use_whitenoise == 'y' -%}
 # Whitenoise
-WHITENOISE_MIDDLEWARE = ('whitenoise.middleware.WhiteNoiseMiddleware', )
+WHITENOISE_MIDDLEWARE = ['whitenoise.middleware.WhiteNoiseMiddleware']
 MIDDLEWARE = WHITENOISE_MIDDLEWARE + MIDDLEWARE
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-{% endif %}
+{%- endif %}

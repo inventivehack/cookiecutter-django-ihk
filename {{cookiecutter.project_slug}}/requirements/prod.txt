@@ -4,6 +4,6 @@
 
 gunicorn==19.6.0
 
-{% if cookiecutter.use_whitenoise == 'y' %}
+{% if cookiecutter.use_whitenoise == 'y' -%}
 whitenoise==3.3.0
-{% endif %}
+{%- endif %}
