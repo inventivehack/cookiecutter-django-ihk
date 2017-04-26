@@ -2,5 +2,5 @@
 
 -r base.txt
 
-flake8==3.2.1
+flake8==3.3.0
 pep257==0.7.0
