@@ -4,7 +4,7 @@ Powered by [Cookiecutter](https://github.com/audreyr/cookiecutter) and inspired 
 [Pydanny's cookiecutter](https://github.com/pydanny/cookiecutter-django) and with the
 goal of optimize our development processes, we are happy to introduce our Django projects boilerplate packed and ready to use with the following features:
 
-* **Django** 1.10
+* **Django** 1.11 LTS
 * **Ansible** provisioning for production, testing and development environments
 * **Travis CI** for continuous integration
 * **AWS CodeDeploy** for continuous delivery
@@ -66,6 +66,7 @@ Please fill free to submit pull requests as well as open issues.
 
 ### Contributors
 
+* [Oscar Roa](https://github.com/OscaRoa)
 * [Pablo Trinidad](https://github.com/pablotrinidad)
 
 ## License
