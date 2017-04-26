@@ -2,4 +2,4 @@
 
 -r base.txt
 
-django-extensions==1.7.5
+django-extensions==1.7.8
