@@ -11,7 +11,6 @@
   "use_whitenoise": "y",
   "use_travis": "y",
   "use_aws_codedeploy": "y",
-  "use_uuids": "y",
   "_copy_without_render": [
     "ansible/bash/tasks/*.yml",
     "ansible/django/tasks/*.yml",

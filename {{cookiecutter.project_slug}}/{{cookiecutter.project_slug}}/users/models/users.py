@@ -8,18 +8,14 @@ from django.contrib.auth.models import AbstractBaseUser
 from {{cookiecutter.project_slug}}.users.managers import UserManager
 
 # Utils
-{% if cookiecutter.use_uuids == 'y' -%}
 import uuid
-{%- endif %}
 from {{cookiecutter.project_slug}}.users.models.utils import set_picture_filename
 
 
 class User(AbstractBaseUser):
     """User model."""
 
-    {% if cookiecutter.use_uuids == 'y' -%}
     uuid = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    {%- endif %}
     email = models.EmailField(
         'email',
         unique=True,
