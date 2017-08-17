@@ -1,0 +1,15 @@
+{% extends "admin/base.html" %}
+
+{% block title %}{{ title }} | {{ cookiecutter.project_name }}{% endblock %}
+
+{% load static %}
+
+{% block extrastyle %}
+<link href="{% static "css/admin/custom_styles.css" %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ cookiecutter.project_name }}</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
